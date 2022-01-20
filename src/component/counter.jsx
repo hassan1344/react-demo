@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    count: 0,
+    value: this.props.value,
     tags: ["tag1"],
     //imageUrl: "https://picsum.photos/200", //generates a random photo of 200 pixels
   };
@@ -27,7 +27,7 @@ class Counter extends Component {
   handleIncreament = (product) => {
     //console.log("Increament Clicked!", this);
     console.log(product);
-    this.setState({ count: this.state.count + 1 });
+    this.setState({ value: this.state.value + 1 });
   };
 
   render() {
@@ -44,7 +44,7 @@ class Counter extends Component {
   }
 
   formatCount() {
-    return this.state.count;
+    return this.state.value;
   }
 }
 
