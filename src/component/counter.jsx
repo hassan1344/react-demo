@@ -31,8 +31,10 @@ class Counter extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div>
+        {this.props.children}
         {this.state.tags.length === 0 && "Please Create a new Tag!"}
         {this.renderTags()}
         <span>{this.formatCount()}</span>
