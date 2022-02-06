@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    value: this.props.value,
+    value: this.props.counter.value,
     tags: ["tag1"],
     //imageUrl: "https://picsum.photos/200", //generates a random photo of 200 pixels
   };
@@ -31,18 +31,22 @@ class Counter extends Component {
   };
 
   render() {
-    /*console.log(this.props);*/
-    return (
+    /*console.log(this.props.id)*/ return (
       <div>
-        {this.props.children}
+        <h4>Counter#{this.props.id}</h4>
         {this.state.tags.length === 0 && "Please Create a new Tag!"}
         {this.renderTags()}
         <span>{this.formatCount()}</span>
-        <button onClick={() => this.handleIncreament({ id: 1 })}>
+        <button
+          onClick={() => this.handleIncreament({ id: this.props.counter.id })}
+        >
           Increament
         </button>
 
-        <button onClick={this.props.onDelete} className="btn btn-danger">
+        <button
+          onClick={() => this.props.onDelete(this.props.counter.id)}
+          className="btn btn-danger"
+        >
           Delete
         </button>
       </div>
