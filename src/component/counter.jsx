@@ -31,7 +31,7 @@ class Counter extends Component {
   };
 
   render() {
-    console.log(this.props);
+    /*console.log(this.props);*/
     return (
       <div>
         {this.props.children}
@@ -40,6 +40,10 @@ class Counter extends Component {
         <span>{this.formatCount()}</span>
         <button onClick={() => this.handleIncreament({ id: 1 })}>
           Increament
+        </button>
+
+        <button onClick={this.props.onDelete} className="btn btn-danger">
+          Delete
         </button>
       </div>
     );
