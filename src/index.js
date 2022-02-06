@@ -11,7 +11,7 @@ import Counters from './component/counters';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Counters />
+    <Counters/>
   </React.StrictMode>,
   document.getElementById('root')
 );
